@@ -27,3 +27,13 @@
         padding: 1.5rem 0rem;
     }
 }
+
+@media only screen and (max-width:500px){
+    .image{
+        height: auto;
+        width: 100%;
+    }
+    .image img{
+        width: inherit;
+    }
+}
