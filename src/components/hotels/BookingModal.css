@@ -8,3 +8,17 @@
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
 }
+
+.booking_modal{
+    top: 5%;
+    left: 35%;
+    width: 400px;
+}
+
+@media only screen and (max-width:500px){
+    .booking_modal{
+        left: 0;
+        width: 80%;
+        margin-left: 2.5rem;
+    }
+}

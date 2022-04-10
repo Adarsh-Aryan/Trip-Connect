@@ -5,7 +5,7 @@ import './Header.css'
 
 function Header() {
 
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState()
 
     const getUser = async () => {
 
@@ -52,7 +52,7 @@ function Header() {
                     {!(sessionStorage.getItem('token')) ?
                         <li><Link to="/login">Login</Link></li>
                         : <>
-                            <li>Hi {user.name.split(' ')[0]}</li>
+                            <li>Hi {user?.name.split(' ')[0]}</li>
                             <li onClick={handleLogout}>LogOut</li>
 
                         </>

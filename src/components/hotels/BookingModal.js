@@ -10,7 +10,7 @@ import './BookingModal.css'
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        width: 400,
+        
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
@@ -64,7 +64,7 @@ const BookingModal = (props) => {
     }
 
     const body = (
-        <div style={{ top: '5%', left: '35%' }} className={classes.paper}>
+        <div className={`${classes.paper} booking_modal`}>
             <h2 id="simple-modal-title">Book Room</h2>
             <div className='modal_controls'>
                 <label htmlFor="hotelName">Hotel Name</label>
@@ -94,7 +94,7 @@ const BookingModal = (props) => {
                     <Button variant='contained' color='secondary' onClick={() => {
                         props.handleClose()
                     }}>Close</Button>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <Button variant='contained' color='primary' onClick={placeHotelBooking}>{!loading ? 'Check Out' :
                         <img src={Loader} alt="loader" style={{ width: '60%' }}></img>}</Button>
                 </div>
