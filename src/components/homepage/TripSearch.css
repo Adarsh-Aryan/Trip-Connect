@@ -1,0 +1,59 @@
+.search{
+    z-index: 2;
+}
+
+.search h1{
+    font-size: 3rem;
+    color: wheat;
+}
+
+.search .select_box{
+    display: flex;
+    margin-top: 2rem;
+}
+
+.search select{
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 5px 5px 14px #888888;
+    cursor: pointer;
+
+}
+
+.search select.city{
+    width: 30%;
+}
+
+.search select.hotels{
+    width: 60%;
+}
+
+@media only screen and (max-width:940px){
+    .search{
+        width: 100%;
+    }
+    .search h1{
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width:425px){
+
+    .search h1{
+        font-size: 2rem;
+    }
+
+    .search .select_box{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search select{
+        
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .search select.city{
+        width: 50%;
+    }
+}

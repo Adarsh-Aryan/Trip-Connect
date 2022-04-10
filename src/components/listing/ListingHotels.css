@@ -1,0 +1,101 @@
+.listing_hotels{
+    width: 60%;
+}
+
+.hotel_content{
+    background-color: white;
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.hotel_img{
+    
+    height: 200px;
+}
+
+.hotel_img img{
+    height: inherit;
+}
+
+.hotel_details{
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+.hotel_performance{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.hotel_performance div > span{
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.btn{
+    text-decoration: none;
+    background-color: #116461fa;
+    color: white;
+    padding: 0.5rem;
+}
+
+.not_found{
+    color:wheat;
+    font-size: 3rem;
+    width: 60%;
+}
+
+@media only screen and (max-width:1100px){
+    .listing_hotels{
+        width: 80%;
+    }
+    
+    .hotel_content{
+        align-items: center;
+        
+    }
+
+    .hotel_details{
+        line-height: 2;
+    }
+    .not_found{
+        width:100%;
+        font-size: 2rem;
+    }
+
+    
+}
+
+@media only screen and (max-width:770px){
+    
+    .listing_hotels{
+        width: 70%;
+    }
+    
+    .hotel_content{
+        flex-direction: column;
+        
+        margin: 1.5rem auto;
+        
+    }
+    .hotel_img{
+        width: 100%;
+        height: 300px;
+    }
+    .hotel_img img{
+        width: inherit;
+    }
+}
+
+@media only screen and (max-width:550px){
+
+    .listing_hotels{
+        width: 100%;
+    }
+
+    .hotel_content{
+        
+        margin: 1.5rem 0rem;
+    }
+}

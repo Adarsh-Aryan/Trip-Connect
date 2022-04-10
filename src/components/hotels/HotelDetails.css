@@ -1,0 +1,29 @@
+.details{
+    display: flex;
+    padding: 4rem 2rem;
+    color: wheat;
+    height: 100vh;
+}
+
+.image{
+    height: 400px;
+}
+
+.image img{
+    height: inherit;
+}
+
+.content{
+    line-height: 1.8;
+    padding-left: 3rem;
+}
+
+@media only screen and (max-width:1024px){
+    .details{
+        flex-direction: column;
+    }
+
+    .content{
+        padding: 1.5rem 0rem;
+    }
+}
