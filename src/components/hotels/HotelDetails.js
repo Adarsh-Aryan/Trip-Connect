@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { Button } from '@material-ui/core'
-import { useHistory } from 'react-router-dom'
+
 import { useParams } from "react-router-dom"
 import { getHotelDetails } from '../../helper/trip-util'
 import Spinner from '../ui/Spinner'
@@ -14,7 +14,7 @@ function HotelDetailsPage() {
 
     const [open, setOpen] = useState(false)
 
-    const history = useHistory()
+    
 
     const { hotelId } = useParams()
     
@@ -26,7 +26,7 @@ function HotelDetailsPage() {
 
     const handleOpen = () => {
         if (!sessionStorage.getItem('token')) {
-            history.push('/login')
+            window.location='/login'
             return;
         }
 
