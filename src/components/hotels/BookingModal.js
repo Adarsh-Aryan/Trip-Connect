@@ -56,7 +56,7 @@ const BookingModal = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ hotel_name, city_name, cost, date, status: 'Not Confirmed', email: sessionStorage.getItem('userInfo') })
+            body: JSON.stringify({ hotel_name, city_name, cost, date, status: 'Not Confirmed', email: sessionStorage.getItem('userInfo')})
         }).then(() => {
             history.push('/allbookings')
             setLoading(false)

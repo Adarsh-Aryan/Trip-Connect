@@ -38,6 +38,18 @@
     background-color: #116461fa;
     color: white;
     padding: 0.5rem;
+    cursor: pointer;
+    border: 0px;
+}
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_action{
+    width: 11%;
+    font-size: 1rem;
 }
 
 .not_found{
@@ -85,6 +97,10 @@
     }
     .hotel_img img{
         width: inherit;
+    }
+
+    .page_action{
+        width: 18%;
     }
 }
 

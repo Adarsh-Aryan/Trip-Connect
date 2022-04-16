@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { TripContext } from '../../context/TripContext';
 import {Link} from "react-router-dom"
 import './ListingHotels.css'
@@ -9,8 +9,13 @@ const ListingHotels = (props) => {
 
     const { listingState: { bySort, byFacilities, byCost } } = useContext(TripContext)
 
-    let filterHotels = listingHotels;
+    
+    const [page,setPage]=useState(0)
 
+    console.log(page)
+    console.log('Page is rendering')
+
+    let filterHotels = listingHotels.slice(page*5,page*5+5);
 
     const filterListingData = () => {
         if (byFacilities.length > 0) {
@@ -56,6 +61,22 @@ const ListingHotels = (props) => {
     }
 
 
+    function handleNext(){
+
+        setPage(page+1)
+    }
+
+    function handlePrev(){
+
+        if(page>0){
+
+            setPage(page-1)
+        }
+    }
+
+    
+
+
     return (
         <div className='listing_hotels'>
 
@@ -93,6 +114,12 @@ const ListingHotels = (props) => {
 
 
             })}
+
+            <div className="pagination">
+                
+                <button className="btn page_action prev" disabled={page===0?true:false} onClick={handlePrev} >Previous</button>
+                <button className='btn page_action next' disabled={(Math.floor((listingHotels.length)/5))===page+1?true:false} onClick={handleNext}>Next</button>
+            </div>
 
 
         </div>
