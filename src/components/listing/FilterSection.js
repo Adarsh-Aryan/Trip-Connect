@@ -17,12 +17,12 @@ const FilterSection = (props) => {
     return false;
   }
 
-  function isChecked(category,name){
-      if(category===name){
-          return true
-      }
+  function isChecked(category, name) {
+    if (category === name) {
+      return true;
+    }
 
-      return false
+    return false;
   }
 
   return (
@@ -64,12 +64,18 @@ const FilterSection = (props) => {
       <div className="filter_heading">
         <h2>Cost Filter</h2>
         <label>
-          <input type="radio" value="All" name="cost" onChange={(e)=>{
+          <input
+            type="radio"
+            value="All"
+            name="cost"
+            onChange={(e) => {
               listingDispatch({
-                  type:'FILTER_BY_COST',
-                  payload:e.target.value
-              })
-          }} checked={isChecked(byCost,'All')}/>
+                type: "FILTER_BY_COST",
+                payload: e.target.value,
+              });
+            }}
+            checked={isChecked(byCost, "All")}
+          />
           All
         </label>
         {costFilter.map((cost_item, index) => {
@@ -85,7 +91,11 @@ const FilterSection = (props) => {
                     payload: e.target.value,
                   });
                 }}
-              checked={isChecked(byCost,`${cost_item.lcost}-${cost_item.hcost}`)}/>
+                checked={isChecked(
+                  byCost,
+                  `${cost_item.lcost}-${cost_item.hcost}`
+                )}
+              />
               {`${cost_item.lcost}-${cost_item.hcost}`}
             </label>
           );
@@ -107,7 +117,8 @@ const FilterSection = (props) => {
                     payload: e.target.value,
                   });
                 }}
-              checked={isChecked(bySort,sort_item.msg)}/>
+                checked={isChecked(bySort, sort_item.msg)}
+              />
               {sort_item.msg}
             </label>
           );
