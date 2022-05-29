@@ -19,11 +19,6 @@
   padding: 1rem;
 }
 
-.header ul {
-  display: flex;
-  align-items: center;
-}
-
 .header a {
   text-decoration: none;
   color: white;
@@ -32,13 +27,9 @@
 
 .header nav {
   margin-right: 1rem;
-}
-
-.header li {
-  cursor: pointer;
-  color: white;
-  margin: 0rem 1rem;
-  list-style: none;
+  display: flex;
+  width: 35%;
+  justify-content: space-evenly;
 }
 
 #login-route {

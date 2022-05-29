@@ -4,6 +4,7 @@ import "./Header.css";
 import { useHistory } from "react-router-dom";
 import { TripContext } from "../../context/TripContext";
 import LogoutModal from "../ui/LogoutModal";
+import { Button } from "@material-ui/core";
 
 function Header() {
   const [user, setUser] = useState();
@@ -42,31 +43,37 @@ function Header() {
       </Link>
       {openLogout && <LogoutModal />}
       <nav>
-        <ul>
-          {!sessionStorage.getItem("token") ? (
-            <li id="login-route">
-              <Link to="/login">Login</Link>
-            </li>
-          ) : (
-            <>
-              <li>Hi {user?.name.split(" ")[0]}</li>
-              <li
-                onClick={() => {
-                  setOpenLogout(true);
-                }}
-              >
-                LogOut
-              </li>
-              <li
-                onClick={() => {
-                  history.push("/allBookings");
-                }}
-              >
-                All Bookings
-              </li>
-            </>
-          )}
-        </ul>
+        {!sessionStorage.getItem("token") ? (
+          <Link to="/login">
+            <Button variant="contained" color="primary">
+              Login
+            </Button>
+          </Link>
+        ) : (
+          <>
+            <Button variant="contained" color="primary">
+              Hi {user?.name.split(" ")[0]}
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => {
+                setOpenLogout(true);
+              }}
+            >
+              LogOut
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                history.push("/allBookings");
+              }}
+            >
+              All Bookings
+            </Button>
+          </>
+        )}
       </nav>
     </header>
   );

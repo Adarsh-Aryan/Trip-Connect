@@ -1,0 +1,12 @@
+.pageNotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.pageNotFound img {
+  width: 25vw;
+  margin-bottom: 1.5rem;
+}

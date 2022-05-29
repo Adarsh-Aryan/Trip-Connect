@@ -7,6 +7,7 @@ import ListingSection from "./components/listing/ListingSection";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Allbookings from "./components/AllBookings/AllBookings";
+import PageNotFound from "./components/ui/PageNotFound";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path="/allbookings">
           <Allbookings />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
       </Switch>
     </Router>
