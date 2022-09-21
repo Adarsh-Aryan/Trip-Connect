@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TripContext } from "../../context/TripContext";
 import { Link } from "react-router-dom";
 import "./ListingHotels.css";
@@ -10,9 +10,7 @@ const ListingHotels = (props) => {
     listingState: { bySort, byFacilities, byCost },
   } = useContext(TripContext);
 
-  const [page, setPage] = useState(0);
-
-  let filterHotels = listingHotels.slice(page * 5, page * 5 + 5);
+  let filterHotels = listingHotels;
 
   const filterListingData = () => {
     if (byFacilities.length > 0) {
@@ -55,16 +53,6 @@ const ListingHotels = (props) => {
     return <h1 className="not_found">Oops! No Hotels Found </h1>;
   }
 
-  function handleNext() {
-    setPage(page + 1);
-  }
-
-  function handlePrev() {
-    if (page > 0) {
-      setPage(page - 1);
-    }
-  }
-
   return (
     <div className="listing_hotels">
       {filterListingData().map((item) => {
@@ -94,25 +82,6 @@ const ListingHotels = (props) => {
           </div>
         );
       })}
-
-      <div className="pagination">
-        <button
-          className="btn page_action prev"
-          disabled={page === 0 ? true : false}
-          onClick={handlePrev}
-        >
-          Previous
-        </button>
-        <button
-          className="btn page_action next"
-          disabled={
-            Math.floor(listingHotels.length / 5) === page + 1 ? true : false
-          }
-          onClick={handleNext}
-        >
-          Next
-        </button>
-      </div>
     </div>
   );
 };
