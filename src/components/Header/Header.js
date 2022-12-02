@@ -17,7 +17,7 @@ function Header() {
     }
 
     const response = await fetch(
-      "https://trip-connect-api.herokuapp.com/api/auth/getUser",
+      `${process.env.API_BASE_URL}/api/auth/getUser`,
       {
         method: "GET",
         headers: {

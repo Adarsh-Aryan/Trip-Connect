@@ -29,7 +29,7 @@ const Register = () => {
 
     setLoading(true);
     const response = await fetch(
-      "https://trip-connect-api.herokuapp.com/api/auth/register",
+      `${process.env.API_BASE_URL}/api/auth/register`,
       {
         method: "POST",
         headers: {

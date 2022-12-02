@@ -13,7 +13,7 @@ function TripSearch(props) {
     const cityId = document.getElementById("city").value;
 
     const response = await fetch(
-      `https://trip-connect-api.herokuapp.com/hotels/${cityId}`
+      `${process.env.API_BASE_URL}/hotels/${cityId}`
     );
 
     const data = await response.json();

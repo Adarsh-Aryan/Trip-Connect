@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
 
     const response = await fetch(
-      "https://trip-connect-api.herokuapp.com/api/auth/login",
+      `${process.env.API_BASE_URL}/api/auth/login`,
       {
         method: "POST",
         headers: {

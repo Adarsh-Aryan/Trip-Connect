@@ -24,7 +24,7 @@ const Allbookings = () => {
 
   const getBookingOrders = async () => {
     const { data } = await axios.get(
-      "https://trip-connect-api.herokuapp.com/allBookings",
+      `${process.env.API_BASE_URL}/allBookings`,
       {
         method: "GET",
 

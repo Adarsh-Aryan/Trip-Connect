@@ -40,7 +40,7 @@ const BookingModal = (props) => {
 
     setLoading(true);
     const response = await fetch(
-      "https://paytm-payment-integration.herokuapp.com/paynow",
+      `${process.env.PAYMENT_GATEWAY_URL}/paynow`,
       {
         method: "POST",
         headers: {

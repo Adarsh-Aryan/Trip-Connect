@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getAllCity() {
   const response = await fetch(
-    "https://trip-connect-api.herokuapp.com/location"
+    `${process.env.API_BASE_URL}/location`
   );
   const cityData = response.json();
 
@@ -11,7 +11,7 @@ export async function getAllCity() {
 
 export async function getAllCatgory() {
   const response = await fetch(
-    "https://trip-connect-api.herokuapp.com/hotelType"
+    `${process.env.API_BASE_URL}/hotelType`
   );
   const hotelCategory = await response.json();
 
@@ -20,7 +20,7 @@ export async function getAllCatgory() {
 
 export async function getHotelDetails(hotelId) {
   const { data } = await axios.get(
-    `https://trip-connect-api.herokuapp.com/details/${hotelId}`
+    `${process.env.API_BASE_URL}/details/${hotelId}`
   );
 
   return data;
@@ -28,7 +28,7 @@ export async function getHotelDetails(hotelId) {
 
 export async function getListingHotels(category) {
   const response = await fetch(
-    `https://trip-connect-api.herokuapp.com/hotelsCat/${category}`
+    `${process.env.API_BASE_URL}/hotelsCat/${category}`
   );
 
   const ListingHotels = await response.json();
@@ -38,7 +38,7 @@ export async function getListingHotels(category) {
 
 export async function getAllFacilities() {
   const response = await fetch(
-    "https://trip-connect-api.herokuapp.com/allFacilities"
+    `${process.env.API_BASE_URL}/allFacilities`
   );
   const facilities = await response.json();
 
