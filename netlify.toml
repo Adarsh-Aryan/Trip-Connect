@@ -2,3 +2,7 @@
   from = "/*"
   to = "/"
   status = 200
+
+[context.deploy-preview.environment]
+  REACT_APP_API_BASE_URL="https://calm-fox-smock.cyclic.app"
+  REACT_APP_PAYMENT_GATEWAY_URL="https://dull-blue-oyster-vest.cyclic.app"
