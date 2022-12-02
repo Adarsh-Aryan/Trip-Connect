@@ -13,7 +13,7 @@ function TripSearch(props) {
     const cityId = document.getElementById("city").value;
 
     const response = await fetch(
-      `${process.env.API_BASE_URL}/hotels/${cityId}`
+      `${process.env.REACT_APP_API_BASE_URL}/hotels/${cityId}`
     );
 
     const data = await response.json();

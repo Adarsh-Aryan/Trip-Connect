@@ -35,12 +35,13 @@ const BookingModal = (props) => {
 
     if (phoneNumber.length !== 10) {
       setError("Number must be 10 digit");
+      setLoading(false)
       return;
     }
 
     setLoading(true);
     const response = await fetch(
-      `${process.env.PAYMENT_GATEWAY_URL}/paynow`,
+      `${process.env.REACT_APP_PAYMENT_GATEWAY_URL}/paynow`,
       {
         method: "POST",
         headers: {
@@ -62,6 +63,7 @@ const BookingModal = (props) => {
     if (response.ok) {
       setLoading(false);
       const data = await response.json();
+      console.log(data)
       const responseData = {
         action: "https://securegw-stage.paytm.in/theia/processTransaction",
         params: data,
@@ -73,6 +75,7 @@ const BookingModal = (props) => {
 
     if (!response.ok) {
       setError("Something Went Wrong!");
+      setLoading(false)
     }
   };
 

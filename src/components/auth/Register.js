@@ -29,7 +29,7 @@ const Register = () => {
 
     setLoading(true);
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/auth/register`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/auth/register`,
       {
         method: "POST",
         headers: {

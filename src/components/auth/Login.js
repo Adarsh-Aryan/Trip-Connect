@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
 
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/auth/login`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/auth/login`,
       {
         method: "POST",
         headers: {

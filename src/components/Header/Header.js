@@ -17,7 +17,7 @@ function Header() {
     }
 
     const response = await fetch(
-      `${process.env.API_BASE_URL}/api/auth/getUser`,
+      `${process.env.REACT_APP_API_BASE_URL}/api/auth/getUser`,
       {
         method: "GET",
         headers: {

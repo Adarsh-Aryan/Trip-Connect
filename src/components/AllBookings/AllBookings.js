@@ -24,7 +24,7 @@ const Allbookings = () => {
 
   const getBookingOrders = async () => {
     const { data } = await axios.get(
-      `${process.env.API_BASE_URL}/allBookings`,
+      `${process.env.REACT_APP_API_BASE_URL}/allBookings`,
       {
         method: "GET",
 
